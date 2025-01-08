@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M20.5</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios del CODE SQUAD! ¡Bienvenidos a una nueva y emocionante misión! Hoy vamos a viajar al Bosque de las Formas, un lugar mágico donde los árboles crecen con diferentes figuras: círculos, cuadrados y triángulos. La guardiana del bosque necesita nuestra ayuda para organizar el camino que lleva a cada árbol. ¡Pero antes, debemos entrenar nuestros cerebros para estar listos! ¡Vamos a prepararnos juntos!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Equipo CODE SQUAD! Antes de empezar nuestra aventura en el bosque, vamos al Gimnasio del CODE SQUAD para despertar nuestras mentes. Presten mucha atención a la canción que escucharán y a los pasos que nos enseñará. ¡Siguiendo la canción, prepararemos nuestra lógica para resolver todos los retos del día! ¡Vamos a activarnos y a prepararnos para la misión!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de algoritmos a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 “Baile de Algoritmos” e introduce la canción que seguiremos hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Excelente, Genios! Ahora vamos a movernos al ritmo de una canción muy especial. En este baile, cada movimiento nos ayudará a entender cómo seguir caminos y a usar nuestra lógica, como lo haremos en el Bosque de las Formas. ¡Escuchen bien las indicaciones y sigan los pasos con toda su energía! ¡Vamos a bailar y a prepararnos para nuestra misión!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🌳 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Hemos llegado al Bosque de las Formas, un lugar mágico donde los árboles tienen figuras de círculos, cuadrados y triángulos. Aquí vive la guardiana del bosque, que ama las formas tanto como nosotros. Pero, ¡oh no! Hoy, los caminos que llevan a cada árbol se han desordenado y la guardiana no sabe cómo llegar a todos. Si los caminos siguen así, ¡el bosque perderá su magia! La guardiana del bosque necesita nuestra ayuda para organizar los caminos. ¿Están listos para esta aventura?"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Equipo CODE SQUAD! Para ayudar a la guardiana del bosque, vamos a usar nuestra lógica para reconstruir los caminos. Cada árbol tiene una forma diferente, y vamos a representarlos con fichas de camino. ¡Pero mucha atención! Los caminos deben llevar a cada árbol de manera ordenada, y no pueden cruzarse entre sí. Usando nuestra lógica y la ayuda de Dart, vamos a crear los caminos más perfectos para que la guardiana pueda llegar a todos los árboles y el bosque recupere su magia. ¡Manos a la obra, Genios!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Hoy vamos a trabajar en parejas porque, como dice un dicho muy conocido: 'Unidos somos más'. Esto quiere decir que cuando trabajamos juntos, podemos lograr cosas más grandes y resolver problemas de forma más creativa. Al compartir ideas con nuestros compañeros, aprendemos y nos ayudamos mutuamente. Así que, busquen un compañero para formar un equipo y levanten la mano cuando estén listos. ¡Si somos un número impar, no se preocupen, yo los ayudaré a formar un equipo de tres para que nadie se quede solo!"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¿Todos tienen a su compañero o equipo? ¡Perfecto! Recuerden que trabajar en pareja significa escucharse, compartir ideas y ayudarse en cada paso del camino. ¡Juntos vamos a demostrar que somos un equipo imparable y que podemos lograr que el Bosque de las Formas recupere su magia! ¡Prepárense, Genios, vamos a trabajar juntos con lógica y alegría!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con fichas de ruta.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de programación con fichas de ruta.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 25 y cierra la historia como cuenta cuentos. Realiza preguntas para reflexionar sobre lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡Lo logramos, CODE SQUAD! Gracias a su increíble trabajo en equipo y a su gran lógica, los caminos del Bosque de las Formas están perfectamente organizados. La guardiana del bosque está muy feliz y agradecida porque ahora puede llegar a todos los árboles y el bosque vuelve a tener su magia. ¡Qué gran trabajo en equipo han hecho! Antes de despedirnos, quiero preguntarles:
+1. ¿Qué aprendimos hoy sobre las diferentes formas de los árboles?
+2. ¿Por qué fue importante seguir un orden para organizar los caminos del bosque?
+3. ¿Cómo nos ayudó a resolver este reto usar nuestra lógica y trabajar juntos?
+¡Son unos verdaderos genios del CODE SQUAD!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto",
+                "dialogo": "¡CODE SQUAD! Para ayudar a la guardiana del bosque, vamos a crear un código para guiarla a cada árbol. Usaremos fichas rectas para representar los caminos rectos y fichas de esquina para los giros. Cada árbol, como el círculo, cuadrado o triángulo, tendrá su propio camino. ¡Vamos a dibujarlos y a crear nuestro código!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 9, entrega los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "Aquí tienen sus hojas y colores, Genios. Ahora, en sus hojas, dibujen el camino que va a cada árbol: círculo, cuadrado y triángulo. Al lado de cada camino, dibujen las fichas que usarán para guiar a Dart, ya sean rectas o de esquina. ¡Prepárense para usar su lógica y crear códigos mágicos!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                 "dialogo":"¡Excelente, equipo! Dibujen el camino y elijan la ficha correcta: recta para ir derecho, esquina para doblar. Recuerden poner el símbolo '=' entre el camino y la ficha. ¡Con su lógica y creatividad, vamos a guiar a la guardiana a todos los árboles!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo":"¡CODE SQUAD, qué bien lo han hecho! Ahora, vamos a intercambiar nuestros códigos para que todos los árboles del bosque tengan su camino perfecto. Voy a recoger sus códigos, les pondré un nombre y se los daré a otro equipo. ¡Así todos trabajaremos juntos y haremos magia en el bosque!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                 "dialogo":"¡Manos a la obra, Genios! Con el código que recibieron, usen las fichas rectas y de esquina para construir el camino a cada árbol. Sigan el código con atención y ayuden a Dart a llegar a todos los árboles. ¡Con su lógica y trabajo en equipo vamos a organizar el bosque!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                 "dialogo": "¡CODE SQUAD! ¡Atención en el Bosque de las Formas! Unas ardillas traviesas movieron algunas hojas e hicieron que los caminos se desordenaran. ¡Oh, no! Pero no se preocupen, el cuartel general nos ha enviado un nuevo código de rescate. ¡Vamos a usar nuestra lógica para resolver este nuevo desafío!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                 "dialogo":"¡Equipo CODE SQUAD! Aquí tienen el “Código de Rescate del Bosque”. Usen fichas rectas y de esquina para reconstruir los caminos y guiar a Dart. Sigan el patrón con mucha atención y trabajen juntos. ¡Confío en su lógica y habilidad!"
+            }
+        ]
+    },
+   "K2": {
+        "5.2": [
+            {
+                 "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion":"Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                 "dialogo":"¡CODE SQUAD! Para ayudar a la guardiana a llegar a todos los árboles, vamos a crear un código usando fichas. Usaremos fichas rectas, de esquina y con una curva simple para representar los caminos. Cada árbol, como el círculo, el cuadrado y el triángulo, tendrá su propio camino. Por ejemplo, un camino con una curva suave se puede representar con una ficha curva simple. ¡Vamos a usar nuestra lógica y creatividad!"
+            },
+            {
+                 "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                 "dialogo":"Aquí tienen sus hojas y colores. Ahora, dibujen en sus hojas el camino a cada árbol y coloquen la ficha correcta: recta, esquina o con curva simple. Recuerden que cada ficha representa un movimiento diferente. ¡Prepárense para usar su lógica!"
+            },
+            {
+                 "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Excelente, equipo! Dibujen los caminos y elijan las fichas que mejor lo representen. Recuerden escribir el signo '=' entre el dibujo del camino y las fichas. Usen su lógica, trabajen en equipo y creen los caminos más perfectos para la guardiana!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo":"¡CODE SQUAD, increíble trabajo! Ahora, para que la guardiana llegue a todos los árboles, vamos a intercambiar los códigos. Recogeré los códigos, los revolveré y se los daré a otro equipo. ¡Vamos a trabajar juntos y demostrar nuestra gran lógica!"
+            },
+            {
+                 "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                 "dialogo": "¡Manos a la obra, Genios! Con el código que recibieron, usen las fichas rectas, de esquina y con curva simple para construir los caminos a cada árbol. Sigan el código con mucha atención para que Dart pueda recorrer el bosque sin problemas. ¡Con su lógica y trabajo en equipo, vamos a lograrlo!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                 "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Alerta en el Bosque de las Formas! Unas ardillas traviesas han desordenado los caminos y la guardiana no puede llegar a los árboles. ¡Oh, no! Pero no se preocupen, el cuartel general nos ha enviado un nuevo código para que Dart pueda seguir los caminos. ¡Vamos a trabajar juntos para resolver este desafío!"
+            },
+            {
+                 "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                 "dialogo":"¡Atención, Genios! Aquí tenemos el “Código de Rescate del Bosque”. Usen fichas rectas, de esquina y curvas simples para reconstruir los caminos. Sigan el código con cuidado y ayuden a Dart a llegar a todos los árboles. ¡Confío en su gran lógica!"
+            }
+        ]
+},
+    "K3": {
+        "5.3": [
+            {
+                 "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! Para que la guardiana pueda llegar a todos los árboles, vamos a crear un código para cada camino. Usaremos fichas rectas, de esquina, con curva simple y con doble curva para representar los caminos a los árboles con forma de círculo, cuadrado, triángulo y estrella. Por ejemplo, un camino que da una vuelta completa se puede representar con una ficha de doble curva. ¡Con nuestra lógica y trabajo en equipo, vamos a crear caminos perfectos!"
+            },
+            {
+                 "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                 "dialogo":"Aquí tienen sus hojas y colores, Genios. Dibujen cada camino y la ficha que lo representa: recta, esquina, curva simple o doble. Recuerden que cada ficha nos indica una dirección diferente. ¡Prepárense para este desafío de lógica y creatividad!"
+            },
+            {
+                 "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y fichas de ruta.",
+                 "dialogo":"¡Qué bien lo hacen, CODE SQUAD! Dibujen los caminos con detalle, escriban el signo '=' y elijan la ficha correcta. Trabajen en equipo y asegúrense de que su código sea claro y fácil de seguir. ¡Con su lógica y creatividad, vamos a crear caminos mágicos!"
+            }
+        ],
+        "6": [
+            {
+                 "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo":"¡CODE SQUAD, impresionante! Ahora vamos a intercambiar nuestros códigos para que todos los árboles del bosque tengan sus caminos perfectos. Voy a recoger los códigos, les pondré nombre y se los daré a otro equipo. ¡Vamos a trabajar juntos para que el bosque sea un lugar mágico!"
+            },
+            {
+                "step": 2,
+                 "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Adelante, Genios! Con el código que recibieron, usen las fichas rectas, de esquina, curvas simples y dobles para construir los caminos a cada árbol. Sigan el código con atención para que Dart pueda recorrer todo el bosque sin problemas. ¡Con su lógica y trabajo en equipo, vamos a lograr que el bosque recupere su magia!"
+            }
+        ],
+        "7": [
+            {
+                 "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                 "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                 "dialogo":"¡CODE SQUAD! ¡Alerta en el Bosque de las Formas! Un grupo de changuitos traviesos desordenaron los caminos y ahora la guardiana del bosque no puede llegar a todos los árboles. ¡Oh, no! Pero no se preocupen, el cuartel general nos ha enviado un nuevo código de rescate. ¡Vamos a usar nuestra lógica y creatividad para resolver este nuevo desafío juntos!"
+            },
+            {
+                 "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                 "accion": "Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                 "dialogo":"¡Equipo CODE SQUAD! Aquí tenemos el “Código de Rescate Avanzado del Bosque”. Usen las fichas rectas, de esquina, curvas simples y dobles para reconstruir los caminos. Sigan el patrón cuidadosamente y ayuden a Dart a llegar a cada árbol. ¡Confío en su gran lógica y en su trabajo en equipo!"
+            }
+        ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
+</body>
+</html>
